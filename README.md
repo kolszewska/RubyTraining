@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## A high level summary of the Orbit application
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Note:** This application was created during completion of [this](https://www.skillshare.com/classes/Ruby-on-Rails-A-Beginners-Guide-to-Web-Development-with-Rails/1774223974/) course.
