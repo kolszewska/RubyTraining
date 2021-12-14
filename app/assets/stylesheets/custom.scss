@@ -60,10 +60,36 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 15px;
   font-weight: bold;
   &:hover {
     color: #fff;
     text-decoration: none;
+  }
+}
+
+/* Footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $light-gray;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;;
+      margin-left: 15px;
+    }
   }
 }
