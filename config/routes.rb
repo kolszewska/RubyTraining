@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'html_pages#about'
   get '/contact', to: 'html_pages#contact'
   get '/home', to: 'html_pages#home'
+  get 'signup', to: 'users#new'
   resources :feedbacks
   resources :users
 end
