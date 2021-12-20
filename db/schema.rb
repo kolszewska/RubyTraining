@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_17_134916) do
+ActiveRecord::Schema.define(version: 2021_12_20_132339) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer "grade"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_12_17_134916) do
     t.string "job_role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
