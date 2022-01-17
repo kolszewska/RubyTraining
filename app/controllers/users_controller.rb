@@ -21,7 +21,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        flash[:success] = 'Welcome to Orbit.'
+        format.html { redirect_to @user}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -57,6 +58,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :job_role)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
