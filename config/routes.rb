@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/contact', to: 'html_pages#contact'
   get '/home', to: 'html_pages#home'
   get 'signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   resources :feedbacks
   resources :users
 end
