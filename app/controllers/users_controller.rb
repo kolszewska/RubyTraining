@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        login @user
         flash[:success] = 'Welcome to Orbit.'
         format.html { redirect_to @user}
         format.json { render :show, status: :created, location: @user }
