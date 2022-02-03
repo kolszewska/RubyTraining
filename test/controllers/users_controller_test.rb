@@ -11,6 +11,18 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should get index' do
+    log_in_as(@user)
+    get users_path
+    assert_response :success
+  end
+
+  test 'should redirect index to login when not logged in' do
+    get users_path
+    assert_not flash.empty?
+    assert_redirected_to login_path
+  end
+
   test 'should create user' do
     assert_difference('User.count') do
       post users_url, params: { user: { email: 'test@test.com', name: 'Test', password: 'password1234', password_confirmation: 'password1234' } }
