@@ -1,5 +1,5 @@
 # Create main test user
-User.create!(name: "Test User", email: "test@test.com", password: "password123", password_confirmation: "password123")
+User.create!(name: "Test User", email: "test@test.com", password: "password123", password_confirmation: "password123", admin: true)
 
 # Bulk generate test users
 99.times do |n|
