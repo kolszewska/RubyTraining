@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class FeedbacksTest < ApplicationSystemTestCase
   setup do
-    @feedback = feedbacks(:one)
+    @feedback = feedbacks(:project1)
   end
 
   test "visiting the index" do
@@ -15,7 +15,6 @@ class FeedbacksTest < ApplicationSystemTestCase
     click_on "New Feedback"
 
     fill_in "Content", with: @feedback.content
-    fill_in "Grade", with: @feedback.grade
     fill_in "User", with: @feedback.user_id
     click_on "Create Feedback"
 
@@ -28,7 +27,6 @@ class FeedbacksTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Content", with: @feedback.content
-    fill_in "Grade", with: @feedback.grade
     fill_in "User", with: @feedback.user_id
     click_on "Update Feedback"
 

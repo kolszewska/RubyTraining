@@ -13,14 +13,14 @@ The application allows to:
     - [ ] job role
     - [ ] team
 
-2. [ ] View/Show all team members 
+2. [X] View/Show all team members 
 
 3. [ ] The ability to leave reviews/feedback for a team member:
     - [ ] grade
-    - [ ] content
-    - [ ] user_id
+    - [X] content
+    - [X] user_id
 
-4. [ ] View/Show all reviews/feedback
+4. [X] View/Show all reviews/feedback
 
 5. [ ] The ability to add areas of success as defined by client:
     - [ ] Project delivery

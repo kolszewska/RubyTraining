@@ -2,7 +2,7 @@ require 'test_helper'
 
 class FeedbacksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @feedback = feedbacks(:one)
+    @feedback = feedbacks(:project1)
   end
 
   test "should get index" do
@@ -17,7 +17,7 @@ class FeedbacksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create feedback" do
     assert_difference('Feedback.count') do
-      post feedbacks_url, params: { feedback: { content: @feedback.content, grade: @feedback.grade, user_id: @feedback.user_id } }
+      post feedbacks_url, params: { feedback: { content: @feedback.content, user_id: @feedback.user_id } }
     end
 
     assert_redirected_to feedback_url(Feedback.last)
@@ -34,7 +34,7 @@ class FeedbacksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update feedback" do
-    patch feedback_url(@feedback), params: { feedback: { content: @feedback.content, grade: @feedback.grade, user_id: @feedback.user_id } }
+    patch feedback_url(@feedback), params: { feedback: { content: @feedback.content, user_id: @feedback.user_id } }
     assert_redirected_to feedback_url(@feedback)
   end
 

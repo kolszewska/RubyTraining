@@ -1,0 +1,11 @@
+<li id="feedback-<%= feedback.id %>">
+  <%= link_to gravatar_for(feedback.user), feedback.user %>
+  <span class="user"><%= link_to feedback.user.name, feedback.user %></span>
+  <span class="content"><%= feedback.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(feedback.created_at) %> ago.
+    <% if current_user?(feedback.user) %>
+      <%= link_to "delete", feedback, method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </span>
+</li>

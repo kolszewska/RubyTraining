@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :feedbacks
+  has_many :feedbacks, dependent: :destroy
   before_save { self.email = email.downcase}
   validates :name, presence: true, length: { maximum: 60 }
   validates :email, presence: true, length: { maximum: 255 },

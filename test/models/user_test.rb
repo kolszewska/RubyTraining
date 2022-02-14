@@ -66,4 +66,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "associated feedbacks should be destroyed" do
+    @user.save
+    @user.feedbacks.create!(content: "Good job on the project")
+    assert_difference 'Feedback.count', -1 do
+      @user.destroy
+    end
+  end
+
 end
