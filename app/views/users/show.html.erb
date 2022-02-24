@@ -22,6 +22,7 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
     <% if @user.feedbacks.any? %>
       <h3>Snapshots <%= @user.feedbacks.count %></h3>
       <ol class="feedbacks">
