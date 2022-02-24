@@ -6,29 +6,19 @@
 
 The application allows to:
 
-1. [ ] The ability to add a new team member:
+1. [X] The ability to add a new team member:
     - [X] first name
     - [X] surname
-    - [ ] department
-    - [ ] job role
-    - [ ] team
+    - [X] job role
 
 2. [X] View/Show all team members 
 
-3. [ ] The ability to leave reviews/feedback for a team member:
-    - [ ] grade
+3. [X] The ability to leave reviews/feedback for a team member:
     - [X] content
     - [X] user_id
 
 4. [X] View/Show all reviews/feedback
 
-5. [ ] The ability to add areas of success as defined by client:
-    - [ ] Project delivery
-    - [ ] Communications
-    - [ ] Training
-    - [ ] Objectives
-    - [ ] Resourcing
+5. [X] Follow different users
 
-6. [ ] View/Show all client areas of success
-
-7. [ ] The ability to view performance metrics
+6. [X] View/Show all followers/following
