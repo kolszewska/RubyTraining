@@ -2,6 +2,7 @@
   <%= link_to gravatar_for(feedback.user), feedback.user %>
   <span class="user"><%= link_to feedback.user.name, feedback.user %></span>
   <span class="content"><%= feedback.content %></span>
+  <%= image_tag feedback.display_image if feedback.image.attached? %>
   <span class="timestamp">
     Posted <%= time_ago_in_words(feedback.created_at) %> ago.
     <% if current_user?(feedback.user) %>
