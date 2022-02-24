@@ -1,27 +1,37 @@
+<% provide(:title, @user.name) %>
 <p id="notice"><%= notice %></p>
 
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <%= gravatar_for @user %>
+      <p>
+        <strong>Name:</strong>
+        <%= @user.name %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @user.email %>
+      </p>
+
+      <p>
+        <strong>Job role:</strong>
+        <%= @user.job_role %>
+      </p>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.feedbacks.any? %>
+      <h3>Snapshots <%= @user.feedbacks.count %></h3>
+      <ol class="feedbacks">
+        <%= render @feedbacks %>
+      </ol>
+      <%= will_paginate @feedbacks %>
+    <% end %>
+  </div>
 </div>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Job role:</strong>
-  <%= @user.job_role %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
