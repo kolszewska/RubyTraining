@@ -5,14 +5,18 @@ class FeedbacksControllerTest < ActionDispatch::IntegrationTest
     @feedback = feedbacks(:project1)
   end
 
-  test "should get index" do
-    get feedbacks_url
-    assert_response :success
+  test "should redirect create when user not logged in" do
+    assert_no_difference 'Feedback.count' do
+      post feedbacks_path, params: { feedback: { content: "Lorem Ipsum"} }
+    end
+    assert_redirected_to login_url
   end
 
-  test "should get new" do
-    get new_feedback_url
-    assert_response :success
+  test "should redirect destroy when user not logged in" do
+    assert_no_difference 'Feedback.count' do
+      delete feedback_path(@feedback)
+    end
+    assert_redirected_to login_url
   end
 
   test "should create feedback" do
@@ -21,21 +25,6 @@ class FeedbacksControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to feedback_url(Feedback.last)
-  end
-
-  test "should show feedback" do
-    get feedback_url(@feedback)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_feedback_url(@feedback)
-    assert_response :success
-  end
-
-  test "should update feedback" do
-    patch feedback_url(@feedback), params: { feedback: { content: @feedback.content, user_id: @feedback.user_id } }
-    assert_redirected_to feedback_url(@feedback)
   end
 
   test "should destroy feedback" do
