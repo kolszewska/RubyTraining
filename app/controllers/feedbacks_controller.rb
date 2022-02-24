@@ -4,6 +4,7 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = current_user.feedbacks.build(feedback_params)
+    @feedback.image.attach(params[:feedback][:image])
     if @feedback.save
       flash[:success] = "Feedback created"
       redirect_to root_url
@@ -23,7 +24,7 @@ class FeedbacksController < ApplicationController
   private
 
   def feedback_params
-    params.require(:feedback).permit(:content)
+    params.require(:feedback).permit(:content, :image)
   end
 
   def correct_user
