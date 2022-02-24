@@ -18,4 +18,13 @@ class FeedbacksControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
   end
+
+  test "should redirect destroy if wrong user" do
+    log_in_as(users(:karolina))
+    feedback = feedbacks(:project13)
+    assert_no_difference 'Feedback.count' do
+      delete feedback_path(feedback)
+    end
+    assert_redirected_to root_url
+  end
 end
