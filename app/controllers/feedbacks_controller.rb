@@ -7,6 +7,7 @@ class FeedbacksController < ApplicationController
       flash[:success] = "Feedback created"
       redirect_to root_url
     else
+      @feed_items = current_user.feed.paginate(page: params[:page])
       render 'html_pages/home'
     end
   end

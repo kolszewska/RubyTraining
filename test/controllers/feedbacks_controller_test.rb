@@ -18,20 +18,4 @@ class FeedbacksControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
   end
-
-  test "should create feedback" do
-    assert_difference('Feedback.count') do
-      post feedbacks_url, params: { feedback: { content: @feedback.content, user_id: @feedback.user_id } }
-    end
-
-    assert_redirected_to feedback_url(Feedback.last)
-  end
-
-  test "should destroy feedback" do
-    assert_difference('Feedback.count', -1) do
-      delete feedback_url(@feedback)
-    end
-
-    assert_redirected_to feedbacks_url
-  end
 end
